@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="TyresCalculator.UI.Controls.Settings"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    d:DesignHeight="480" d:DesignWidth="480">
+
+    <Grid x:Name="LayoutRoot" Background="{StaticResource PhoneBackgroundBrush}">
+        <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Style="{StaticResource TextSettingHeaderTextBlockStyle}" Text="Value" ></TextBlock>
+                <TextBlock Style="{StaticResource NumericSettingHeaderTextBlockStyle}" Text="Old"></TextBlock>
+                <TextBlock Style="{StaticResource NumericSettingHeaderTextBlockStyle}" Text="New"></TextBlock>
+                <TextBlock Style="{StaticResource NumericSettingHeaderTextBlockStyle}" Text="Diff"></TextBlock>
+            </StackPanel>
+            <ItemsControl x:Name="itemsList">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Style="{StaticResource TextSettingValueTextBlockStyle}" Text="{Binding DisplayName}"></TextBlock>
+                            <TextBlock Style="{StaticResource NumericSettingValueTextBlockStyle}" Text="{Binding Old}"></TextBlock>
+                            <TextBlock Style="{StaticResource NumericSettingValueTextBlockStyle}" Text="{Binding New}"></TextBlock>
+                            <TextBlock Style="{StaticResource NumericSettingValueTextBlockStyle}" Text="{Binding Difference}"></TextBlock>
+                        </StackPanel>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </StackPanel>
+    </Grid>
+</UserControl>

@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="TyresCalculator.UI.Controls.AnalyzeFault"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    d:DesignHeight="480" d:DesignWidth="480">
+    
+    <Grid x:Name="LayoutRoot" Background="{StaticResource PhoneBackgroundBrush}">
+        <StackPanel>
+            <TextBlock x:Name="txtHeader" ></TextBlock>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Statement: " Style="{StaticResource AnalyzeFaultHeaderTextBlockStyle}" />
+                <TextBox x:Name="txtStatement" Style="{StaticResource AnalyzeFaultValueTextBoxStyle}" Text="{Binding Statement}" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Real: " Style="{StaticResource AnalyzeFaultHeaderTextBlockStyle}" />
+                <TextBox x:Name="txtReal" Style="{StaticResource AnalyzeFaultValueDisabledTextBoxStyle}" Text="{Binding Real}" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Fault: " Style="{StaticResource AnalyzeFaultHeaderTextBlockStyle}" />
+                <TextBox x:Name="txtFault" Text="{Binding Difference}" Style="{StaticResource AnalyzeFaultValueDisabledTextBoxStyle}" />
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>
